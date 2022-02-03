@@ -1,4 +1,4 @@
-package by.volodko.epam.online_store.connection;
+package by.volodko.epam.online_store.model.connection;
 
 import by.volodko.epam.online_store.exception.ConnectionPoolException;
 import org.apache.logging.log4j.Level;
@@ -19,32 +19,32 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ConnectionPool {
     private static final Logger logger = LogManager.getLogger();
+    private static final String RESOURCE = "database/pool.properties";
+    private final static int DEFAULT_POOL_SIZE = 32;
+
     private static ConnectionPool instance;
     private static AtomicBoolean isInstanceHas = new AtomicBoolean();
     private static ReentrantLock lock = new ReentrantLock(true);
-    private static final String RESOURCE = "database/pool.properties";
+
     private BlockingQueue<ProxyConnection> freeConnections;
     private BlockingQueue<ProxyConnection> usedConnections;
-    private final static int DEFAULT_POOL_SIZE = 15;
     private int poolSize;
 
     private ConnectionPool() {
         Properties properties = new Properties();
         try (InputStream inputStream = ConnectionPool.class.getClassLoader().getResourceAsStream(RESOURCE)) {
             properties.load(inputStream);
-            poolSize = properties.get("poolsize") != null ? Integer.parseInt((String) properties.get("poolsize")) : DEFAULT_POOL_SIZE;
+           Object propertiesPoolSize = properties.get("poolsize");
+            poolSize = propertiesPoolSize != null ? Integer.parseInt((String) propertiesPoolSize) : DEFAULT_POOL_SIZE;
             freeConnections = new LinkedBlockingDeque<>(poolSize);
             usedConnections = new LinkedBlockingDeque<>();
             for (int i = 0; i < poolSize; i++) {
                 ProxyConnection proxyConnection = (ProxyConnection) ConnectionFactory.getConnection();
-                freeConnections.put(proxyConnection);
+                freeConnections.add(proxyConnection);
             }
         } catch (IOException e) {
             logger.log(Level.WARN, "IO Exception: ", e);
 
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            logger.log(Level.ERROR, "The current thread is interrupted: ", e);
         } catch (ConnectionPoolException e) {
             logger.log(Level.ERROR, "Unable to create connection", e);
         }
@@ -83,15 +83,14 @@ public class ConnectionPool {
     }
 
     public void releaseConnection(Connection connection) {
-        if (connection.getClass() == ProxyConnection.class) {
-            usedConnections.remove(connection);
+        if (connection.getClass() == ProxyConnection.class && usedConnections.remove(connection)) {
             try {
                 freeConnections.put((ProxyConnection) connection);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 logger.log(Level.ERROR, "The current thread is interrupted: ", e);
-
             }
+
         } else {
             logger.log(Level.ERROR, "Wrong connection detected");
             throw new RuntimeException("Wrong connection detected");
@@ -106,9 +105,9 @@ public class ConnectionPool {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 logger.log(Level.ERROR, "The current thread is interrupted: ", e);
-         }   catch (SQLException e) {
-             logger.log(Level.ERROR, "Exception in method of closing connection", e);
-          }
+            } catch (SQLException e) {
+                logger.log(Level.ERROR, "Exception in method of closing connection", e);
+            }
             deregisterDrivers();
         }
 

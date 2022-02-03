@@ -1,4 +1,4 @@
-package by.volodko.epam.online_store.connection;
+package by.volodko.epam.online_store.model.connection;
 
 import java.sql.*;
 import java.util.Map;
@@ -15,6 +15,15 @@ public class ProxyConnection implements Connection {
 
     public void fullCloseConnection() throws SQLException {
         connection.close();
+    }
+
+
+    @Override
+    public void close() throws SQLException {
+        if (!connection.getAutoCommit()) {
+            connection.setAutoCommit(true);
+        }
+        ConnectionPool.getInstance().releaseConnection(this);
     }
 
     @Override
@@ -58,13 +67,6 @@ public class ProxyConnection implements Connection {
 
     }
 
-    @Override
-    public void close() throws SQLException {
-        if (!connection.getAutoCommit()) {
-            connection.setAutoCommit(true);
-        }
-        ConnectionPool.getInstance().releaseConnection(this);
-    }
 
     @Override
     public boolean isClosed() throws SQLException {

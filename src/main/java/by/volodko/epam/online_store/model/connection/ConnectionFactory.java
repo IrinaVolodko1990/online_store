@@ -1,4 +1,4 @@
-package by.volodko.epam.online_store.connection;
+package by.volodko.epam.online_store.model.connection;
 
 import by.volodko.epam.online_store.exception.ConnectionPoolException;
 import org.apache.logging.log4j.Level;
@@ -13,20 +13,25 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 
-public class ConnectionFactory {
+class ConnectionFactory {
     private static final Logger logger = LogManager.getLogger();
     private static final String URL;
+    private static final String USER;
+    private static final String PASSWORD;
     private static final String DB_RESOURCE = "db.properties";
     private static final Properties connectionProperties = new Properties();
 
+
     static {
-        String driverName = null;
+        String driverName = "";
+
         try (InputStream inputStream = ConnectionFactory.class.getClassLoader().getResourceAsStream(DB_RESOURCE)) {
             connectionProperties.load(inputStream);
             driverName = (String) connectionProperties.get("driver");
             Class.forName(driverName);
             URL = (String) connectionProperties.get("url");
-
+            USER = (String) connectionProperties.get("user");
+            PASSWORD = (String) connectionProperties.get("password");
         } catch (ClassNotFoundException e) {
             logger.log(Level.ERROR, "Unable register driver: " + driverName, e);
             throw new RuntimeException("Unable register driver: " + driverName, e);
@@ -36,10 +41,13 @@ public class ConnectionFactory {
         }
     }
 
+    private ConnectionFactory() {
+    }
+
     static Connection getConnection() throws ConnectionPoolException {
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(URL, connectionProperties);
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
             throw new ConnectionPoolException("Unable to connect to URL = " + URL, e);
         }
