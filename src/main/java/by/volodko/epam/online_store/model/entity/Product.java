@@ -11,8 +11,7 @@ public class Product {
     private boolean isAvailable;
     private ProductCategory productCategory;
     //private ? image;
-    //private int numberInStock;
-
+    private int numberInStock;
 
     public Product() {
     }
@@ -58,7 +57,7 @@ public class Product {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return numberInStock > 0 ? true : false;
     }
 
     public void setAvailable(boolean available) {
@@ -71,6 +70,14 @@ public class Product {
 
     public void setProductCategory(ProductCategory productCategory) {
         this.productCategory = productCategory;
+    }
+
+    public int getNumberInStock() {
+        return numberInStock;
+    }
+
+    public void setNumberInStock(int numberInStock) {
+        this.numberInStock = numberInStock;
     }
 
     @Override
@@ -115,11 +122,11 @@ public class Product {
         return sb.toString();
     }
 
-    public static class ProductBuilder{
+    public static class ProductBuilder {
         private Product product;
 
         public ProductBuilder() {
-           product = new Product();
+            product = new Product();
         }
 
         public ProductBuilder setProductId(long productId) {
@@ -147,18 +154,25 @@ public class Product {
             product.setPrice(price);
             return this;
         }
-
-        public ProductBuilder setAvailable(boolean available) {
-            product.setAvailable(available);
-            return this;
-
-        }
+//
+//        public ProductBuilder setAvailable(boolean available) {
+//            product.setAvailable(available);
+//            return this;
+//
+//        }
 
         public ProductBuilder setProductCategory(ProductCategory productCategory) {
             product.setProductCategory(productCategory);
             return this;
         }
-        public Product build(){
+
+
+        public ProductBuilder setNumberInStock(int numberInStock) {
+            product.setNumberInStock(numberInStock);
+            return this;
+        }
+
+        public Product build() {
             return product;
         }
 

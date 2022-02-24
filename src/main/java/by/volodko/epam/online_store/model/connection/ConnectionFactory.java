@@ -18,7 +18,7 @@ class ConnectionFactory {
     private static final String URL;
     private static final String USER;
     private static final String PASSWORD;
-    private static final String DB_RESOURCE = "db.properties";
+    private static final String DB_RESOURCE = "database/db.properties";
     private static final Properties connectionProperties = new Properties();
 
 

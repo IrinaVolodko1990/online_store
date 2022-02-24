@@ -207,7 +207,7 @@ public class User {
             return this;
         }
 
-        public UserBuilder setLastName(String surName) {
+        public UserBuilder setSureName(String surName) {
             user.surname = surName;
             return this;
         }
