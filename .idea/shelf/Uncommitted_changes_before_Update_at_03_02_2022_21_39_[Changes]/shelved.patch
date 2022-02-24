@@ -1,0 +1,103 @@
+Index: target/classes/db.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>driver = com.microsoft.sqlserver.jdbc.SQLServerDriver\r\nurl = jdbc:sqlserver://sdo.iba.by;database=volodko_online_storedb\r\nuser = SQLStud\r\npassword = Pa$$w0rd2020\r\nautoReconnect=true\r\nuseUnicode = true\r\ncharacterEncoding=utf8\r\nuseSSL=true\r\nserverTimezone=Europe/Minsk\r\nserverSSLCert=classpath:server.crt\r\n\r\n
+===================================================================
+diff --git a/target/classes/db.properties b/target/classes/db.properties
+--- a/target/classes/db.properties	
++++ b/target/classes/db.properties	
+@@ -1,5 +1,5 @@
+ driver = com.microsoft.sqlserver.jdbc.SQLServerDriver
+-url = jdbc:sqlserver://sdo.iba.by;database=volodko_online_storedb
++url = jdbc:sqlserver://sdo.iba.by;database=volodko_online_store
+ user = SQLStud
+ password = Pa$$w0rd2020
+ autoReconnect=true
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\">\r\n    <file url=\"file://$PROJECT_DIR$/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/src/main/resources\" charset=\"UTF-8\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	
++++ b/.idea/encodings.xml	
+@@ -1,7 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="Encoding">
++  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
++    <file url="PROJECT" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: target/classes/pool.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>poolsize=8\r\npoolsize_max=32\r\npoolsize_min=5
+===================================================================
+diff --git a/target/classes/pool.properties b/target/classes/pool.properties
+--- a/target/classes/pool.properties	
++++ b/target/classes/pool.properties	
+@@ -1,3 +1,3 @@
+-poolsize=8
++poolsize=15
+ poolsize_max=32
+-poolsize_min=5
+\ No newline at end of file
++poolsize_min=8
+\ No newline at end of file
+Index: target/online_store-1.0-SNAPSHOT/WEB-INF/classes/pool.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>poolsize=8\r\npoolsize_max=32\r\npoolsize_min=5
+===================================================================
+diff --git a/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/pool.properties b/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/pool.properties
+--- a/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/pool.properties	
++++ b/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/pool.properties	
+@@ -1,3 +1,3 @@
+-poolsize=8
++poolsize=15
+ poolsize_max=32
+-poolsize_min=5
+\ No newline at end of file
++poolsize_min=8
+\ No newline at end of file
+Index: target/online_store-1.0-SNAPSHOT/WEB-INF/classes/db.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>driver = com.microsoft.sqlserver.jdbc.SQLServerDriver\r\nurl = jdbc:sqlserver://sdo.iba.by;database=volodko_online_storedb\r\nuser = SQLStud\r\npassword = Pa$$w0rd2020\r\nautoReconnect=true\r\nuseUnicode = true\r\ncharacterEncoding=utf8\r\nuseSSL=true\r\nserverTimezone=Europe/Minsk\r\nserverSSLCert=classpath:server.crt\r\n\r\n
+===================================================================
+diff --git a/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/db.properties b/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/db.properties
+--- a/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/db.properties	
++++ b/target/online_store-1.0-SNAPSHOT/WEB-INF/classes/db.properties	
+@@ -1,5 +1,5 @@
+ driver = com.microsoft.sqlserver.jdbc.SQLServerDriver
+-url = jdbc:sqlserver://sdo.iba.by;database=volodko_online_storedb
++url = jdbc:sqlserver://sdo.iba.by;database=volodko_online_store
+ user = SQLStud
+ password = Pa$$w0rd2020
+ autoReconnect=true
+Index: target/online_store-1.0-SNAPSHOT/WEB-INF/web.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<web-app xmlns=\"http://xmlns.jcp.org/xml/ns/javaee\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd\"\r\n         version=\"4.0\">\r\n    <error-page>\r\n        <exception-type>java.lang.RuntimeException</exception-type>\r\n        <location>/pages/error500.jsp</location>\r\n    </error-page>\r\n</web-app>
+===================================================================
+diff --git a/target/online_store-1.0-SNAPSHOT/WEB-INF/web.xml b/target/online_store-1.0-SNAPSHOT/WEB-INF/web.xml
+--- a/target/online_store-1.0-SNAPSHOT/WEB-INF/web.xml	
++++ b/target/online_store-1.0-SNAPSHOT/WEB-INF/web.xml	
+@@ -3,8 +3,8 @@
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+          version="4.0">
+-    <error-page>
+-        <exception-type>java.lang.RuntimeException</exception-type>
+-        <location>/pages/error500.jsp</location>
+-    </error-page>
++<!--    <error-page>-->
++<!--        <exception-type>java.lang.RuntimeException</exception-type>-->
++<!--        <location>/pages/error500.jsp</location>-->
++<!--    </error-page>-->
+ </web-app>
+\ No newline at end of file
