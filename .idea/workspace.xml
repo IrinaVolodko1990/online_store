@@ -11,16 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80d435ef-2a1b-4288-b204-7a4836a9097d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/online_store.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/connection/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/connection/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/UserDiscount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/UserDiscount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pool.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/pool.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/command/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/command/CommandProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +251,8 @@
       <workItem from="1643622067974" duration="2150000" />
       <workItem from="1644305330348" duration="626000" />
       <workItem from="1645426034777" duration="1853000" />
-      <workItem from="1645428580328" duration="32645000" />
+      <workItem from="1645428580328" duration="34950000" />
+      <workItem from="1646123105529" duration="1788000" />
     </task>
     <servers />
   </component>

@@ -10,7 +10,7 @@ public class CommandProvider {
     private static CommandProvider instance;
     private final EnumMap<CommandType, Command> commands = new EnumMap(CommandType.class);
 
-    private CommandProvider(){
-        commands.put(START_PAGE_COMMAND, new StartPageCommand())
-    }
+    // private CommandProvider(){
+      //  commands.put(START_PAGE_COMMAND, new StartPageCommand())
+   // }
 }
