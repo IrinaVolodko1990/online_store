@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Repository <T> {
 
-    void insert(T ob) throws RepositoryException;
-    void update (T ob) throws RepositoryException;
+    void insert(T product) throws RepositoryException;
+    void update (T product) throws RepositoryException;
     List<T> query (Specification specification) throws RepositoryException;
 }

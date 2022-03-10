@@ -1,6 +1,10 @@
 package by.volodko.epam.online_store.model.entity;
 
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
+import java.util.Base64;
 
 public class Product {
     private long productId;
@@ -8,9 +12,8 @@ public class Product {
     private String brand;
     private String description;
     private BigDecimal price;
-    private boolean isAvailable;
     private ProductCategory productCategory;
-    //private ? image;
+    private InputStream image;
     private int numberInStock;
 
     public Product() {
@@ -60,9 +63,6 @@ public class Product {
         return numberInStock > 0 ? true : false;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
 
     public ProductCategory getProductCategory() {
         return productCategory;
@@ -80,6 +80,23 @@ public class Product {
         this.numberInStock = numberInStock;
     }
 
+    public InputStream getImage() {
+        return image;
+    }
+
+    public void setImage(InputStream image) {
+        this.image = image;
+    }
+
+    public String getImageCode() {
+        String imageCode = "";
+        try {
+            imageCode = Base64.getEncoder().encodeToString(image.readAllBytes());
+        } catch (IOException e) {
+        }
+        return imageCode;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -88,12 +105,13 @@ public class Product {
         Product product = (Product) o;
 
         if (productId != product.productId) return false;
-        if (isAvailable != product.isAvailable) return false;
+        if (numberInStock != product.numberInStock) return false;
         if (productName != null ? !productName.equals(product.productName) : product.productName != null) return false;
         if (brand != null ? !brand.equals(product.brand) : product.brand != null) return false;
         if (description != null ? !description.equals(product.description) : product.description != null) return false;
         if (price != null ? !price.equals(product.price) : product.price != null) return false;
-        return productCategory == product.productCategory;
+        if (productCategory != product.productCategory) return false;
+        return image != null ? image.equals(product.image) : product.image == null;
     }
 
     @Override
@@ -103,8 +121,9 @@ public class Product {
         result = 31 * result + (brand != null ? brand.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
-        result = 31 * result + (isAvailable ? 1 : 0);
         result = 31 * result + (productCategory != null ? productCategory.hashCode() : 0);
+        result = 31 * result + (image != null ? image.hashCode() : 0);
+        result = 31 * result + numberInStock;
         return result;
     }
 
@@ -116,8 +135,9 @@ public class Product {
         sb.append(", brand='").append(brand).append('\'');
         sb.append(", description='").append(description).append('\'');
         sb.append(", price=").append(price);
-        sb.append(", isAvailable=").append(isAvailable);
         sb.append(", productCategory=").append(productCategory);
+        sb.append(", image=").append(image);
+        sb.append(", numberInStock=").append(numberInStock);
         sb.append('}');
         return sb.toString();
     }
@@ -154,18 +174,17 @@ public class Product {
             product.setPrice(price);
             return this;
         }
-//
-//        public ProductBuilder setAvailable(boolean available) {
-//            product.setAvailable(available);
-//            return this;
-//
-//        }
+
 
         public ProductBuilder setProductCategory(ProductCategory productCategory) {
             product.setProductCategory(productCategory);
             return this;
         }
 
+        public ProductBuilder setImage(InputStream inputStream) {
+            product.setImage(inputStream);
+            return this;
+        }
 
         public ProductBuilder setNumberInStock(int numberInStock) {
             product.setNumberInStock(numberInStock);

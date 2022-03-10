@@ -3,11 +3,11 @@ package by.volodko.epam.online_store.model.validator;
 
 public class UserValidator {
     private static final String PHONE_REGEX = "(\\+375)(29|25|44|33)[\\d]{7}";
-    private static final String LOGIN_REGEX = "[a-zA-zА-Яа-я\\d]{4,20}";
-    private static final String PASSWORD_REGEX = "[a-zA-zА-Яа-я\\d]{5,20}"; // "[\\p{Graph}&&[^\\<\\>]]+\\d]{5,20}";
+    private static final String LOGIN_REGEX = "[a-zA-zА-Яа-я\\d]{2,25}";
+    private static final String PASSWORD_REGEX = "[a-zA-zА-Яа-я\\d]{5,30}"; // "[\\p{Graph}&&[^\\<\\>]]+\\d]{5,20}";
     private static final String EMAIL_REGEX = "^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$";
-    private static final String NAME_REGEX = "[a-zA-Zа-яА-я]{2,20}";
-    private static final String SURNAME_REGEX = "[a-zA-Zа-яА-я]{2,20}";
+    private static final String NAME_REGEX = "[a-zA-Zа-яА-я]{2,30}";
+    private static final String SURNAME_REGEX = "[a-zA-Zа-яА-я]{2,30}";
 
     private UserValidator() {
     }

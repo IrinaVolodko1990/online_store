@@ -32,24 +32,22 @@ public final class ColumnName {
     /*products Table*/
     public static final String PRODUCT_ID = "product_id";
     public static final String PRODUCT_NAME = "product_name";
-    public static final String PRODUCT_DESCRIPTION = "description";
-   // public static final String PRODUCT_IMAGE = "image";
-    public static final String PRODUCT_PRICE = "price";
-    public static final String PRODUCT_AVAILABLE = "isAvailable";
-    public static final String PRODUCT_CATEGORY = "category_id";
     public static final String PRODUCT_BRAND = "brand";
-   // public static final String PRODUCT_NUMBER_IN_STOCK = "number_in_stock";
+    public static final String PRODUCT_DESCRIPTION = "description";
+    public static final String PRODUCT_PRICE = "price";
+    public static final String PRODUCT_CATEGORY = "category_id";
+    public static final String PRODUCT_IMAGE = "image";
+    public static final String PRODUCT_NUMBER_IN_STOCK = "number_in_stock";
 
     /*products_categories Table */
     public static final String PRODUCT_TYPES_ID = "id";
     public static final String PRODUCT_TYPES_TYPE = "category_description";
 
 
-
     /*orders table*/
     public static final String ORDERS_ID = "id";
     public static final String ORDERS_ORDER = "order";
-    public static final String ORDERS_DATE ="date";
+    public static final String ORDERS_DATE = "date";
     public static final String ORDERS_STATUS_ID = "order_status_id";
     public static final String ORDERS_SUMMARY_PRICE = "summary_price";
     public static final String ORDERS_USER_ID = "user_id";

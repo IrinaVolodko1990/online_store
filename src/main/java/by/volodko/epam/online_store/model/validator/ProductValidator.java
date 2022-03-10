@@ -1,10 +1,14 @@
 package by.volodko.epam.online_store.model.validator;
 
 
+import java.io.InputStream;
+import java.math.BigDecimal;
+
 public class ProductValidator {
     private static final String BRAND_REGEX = "^[\\p{Graph}А-Яа-я\\s]{1,50}";
     private static final String PRODUCT_NAME_REGEX = "^[\\p{Graph}А-Яа-я\\s]{1,50}";
     private static final String PRICE_REGEX = "^\\d+[.,]?\\d{1,2}$";
+    private static final int MIN_NUMBER_IN_STORE = 0;
 
 
     private ProductValidator() {
@@ -24,20 +28,22 @@ public class ProductValidator {
         return productName.matches(PRODUCT_NAME_REGEX);
     }
 
-    public static boolean isValidPrice(String price) {
-        if (price == null || price.isEmpty() || price.trim().isEmpty() || price.equals("0.0")||price.equals("0,0")) {
+    public static boolean isValidPrice(BigDecimal price) {
+        String priceAsString = price.toString();
+        if (priceAsString == null || priceAsString.isEmpty()
+                || priceAsString.trim().isEmpty() || price.equals("0.0")||price.equals("0,0")) {
             return false;
         }
-        return price.matches(PRICE_REGEX);
+        return priceAsString.matches(PRICE_REGEX);
     }
 
     public static boolean isValidNumberInStock(int numberInStock) {
-        return numberInStock >= 0;
+        return numberInStock >= MIN_NUMBER_IN_STORE;
     }
 
-    //   public static booleanIsValidImage(?){
-    //   return ?!=null;
-    //   }
+       public static boolean IsValidImage(InputStream inputStream){
+       return inputStream!=null;
+       }
 
 
 }

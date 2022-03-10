@@ -16,7 +16,8 @@ private static final Logger logger = LogManager.getLogger();
 private static final String GET_BY_LOGIN_QUERY = "SELECT users.user_id,login,password,name,surname," +
         "email,phone_number,user_status_id,user_role_id,discount_id, birthday_date " +
         "FROM users,users_roles,users_status " +
-        "WHERE user_role_id = users_roles.id AND user_status_id = users_status.id AND login=?";
+        "WHERE user_role_id = users_roles.id AND user_status_id = users_status.id " +
+        "AND discount_id = users_discounts.id AND login=?";
 private String login;
 public FindByLoginSpecification (String login){
     this.login = login;

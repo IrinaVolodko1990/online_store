@@ -11,8 +11,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80d435ef-2a1b-4288-b204-7a4836a9097d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/online_store_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/online_store_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/online_store.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/DispatcherServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/command/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/command/CommandProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/command/impl/StartPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/controller/command/impl/StartPageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/ProductCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/entity/ProductCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/ColumnName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/ColumnName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/ProductRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/specification/FindByLoginSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/repository/impl/specification/FindByLoginSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/validator/ProductValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/validator/ProductValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/validator/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/volodko/epam/online_store/model/validator/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/start.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/start.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +268,9 @@
       <workItem from="1644305330348" duration="626000" />
       <workItem from="1645426034777" duration="1853000" />
       <workItem from="1645428580328" duration="34950000" />
-      <workItem from="1646123105529" duration="1788000" />
+      <workItem from="1646123105529" duration="5959000" />
+      <workItem from="1646288882240" duration="19823000" />
+      <workItem from="1646895009801" duration="9030000" />
     </task>
     <servers />
   </component>
