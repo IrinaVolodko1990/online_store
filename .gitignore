@@ -1,6 +1,7 @@
 # Folders
 .idea/*
 out/*
+log/*
 
 # Files
 *.class
